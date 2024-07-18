@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SidimEsus.Repos;
 
 namespace Project
 {
@@ -21,6 +23,11 @@ namespace Project
         {
 
             services.AddControllersWithViews();
+
+            var connection = Configuration["ConexaoPostGre:PostGreConnectionString"];
+
+            services.AddDbContext<AppDatabase>(options =>
+          options.UseNpgsql(connection));
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

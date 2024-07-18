@@ -15,5 +15,6 @@ namespace SidimEsus.Repos
         public DbSet<Funcionario> Funcionarios { get; set; }
         public DbSet<Estabelecimento> Estabelecimentos { get; set; }
         public DbSet<Equipe> Equipes { get; set; }
+        public DbSet<Cbo> Cbos { get; set; }
     }
 }

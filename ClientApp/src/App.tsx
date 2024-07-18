@@ -13,6 +13,7 @@ function App() {
                 name="cidadaos"
                 list={ListGuesser}
                 options={{ label: "Cidadãos" }}
+                recordRepresentation="nome"
             />
             <Resource
                 name="visitasDomiciliar"
@@ -23,16 +24,23 @@ function App() {
                 name="funcionarios"
                 list={ListGuesser}
                 options={{ label: "Funcionários" }}
+                recordRepresentation="nome"
             />
             <Resource
                 name="estabelecimentos"
                 list={ListGuesser}
                 options={{ label: "Estabelecimentos" }}
+                recordRepresentation="nome"
             />
             <Resource
                 name="equipes"
                 list={ListGuesser}
                 options={{ label: "Equipes" }}
+                recordRepresentation="nome"
+            />
+            <Resource
+                name="cbos"
+                recordRepresentation="nome"
             />
         </Admin>
     );

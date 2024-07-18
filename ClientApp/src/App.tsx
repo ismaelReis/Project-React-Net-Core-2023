@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import jsonServerProvider from 'ra-data-json-server';
+import { Admin, ListGuesser, Resource } from 'react-admin';
+
+
+const dataProvider = jsonServerProvider('api');
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    return (
+        <Admin
+            dataProvider={dataProvider}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+            <Resource
+                name="cidadaos"
+                list={ListGuesser}
+                options={{ label: "Cidadãos" }}
+            />
+            <Resource
+                name="visitasDomiciliar"
+                list={ListGuesser}
+                options={{ label: "Visitas domiciliares" }}
+            />
+        </Admin>
+    );
 }
 
 export default App;

@@ -24,6 +24,11 @@ function App() {
                 list={ListGuesser}
                 options={{ label: "Funcionários" }}
             />
+            <Resource
+                name="estabelecimentos"
+                list={ListGuesser}
+                options={{ label: "Estabelecimentos" }}
+            />
         </Admin>
     );
 }

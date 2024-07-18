@@ -19,6 +19,11 @@ function App() {
                 list={ListGuesser}
                 options={{ label: "Visitas domiciliares" }}
             />
+            <Resource
+                name="funcionarios"
+                list={ListGuesser}
+                options={{ label: "Funcionários" }}
+            />
         </Admin>
     );
 }

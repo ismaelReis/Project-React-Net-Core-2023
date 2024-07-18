@@ -11,5 +11,6 @@ namespace SidimEsus.Repos
         }
 
         public DbSet<Cidadao> Cidadaos { get; set; }
+        public DbSet<VisitaDomiciliar> VisitasDomiciliar { get; set; }
     }
 }

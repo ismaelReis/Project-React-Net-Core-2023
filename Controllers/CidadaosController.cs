@@ -1,24 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SidimEsus.Controllers.ReactAdminController;
+using SidimEsus.Models;
 using SidimEsus.Repos;
-using System.Linq;
 
 namespace SidimEsus.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CidadaosController : ControllerBase
+    public class CidadaosController : ReactAdminController<Cidadao>
     {
-        private readonly AppDatabase _context;
-
-        public CidadaosController(AppDatabase context)
+        public CidadaosController(AppDatabase context) : base(context)
         {
-            _context = context;
-        }
-
-        [HttpGet]
-        public IActionResult Get()
-        {
-            return Ok(_context.Cidadaos.Take(100));
+            _table = context.Cidadaos;
         }
     }
 }

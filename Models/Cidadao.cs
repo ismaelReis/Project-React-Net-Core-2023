@@ -20,9 +20,9 @@ namespace SidimEsus.Models
         [Column("co_dim_sexo")]
         public int? Sexo { get; set; }
         [Column("nu_telefone_celular")]
-        public string telefone { get; set; }
+        public string Telefone { get; set; }
         [Column("co_dim_tempo_nascimento")]
-        public int? nascimento { get; set; }
+        public int? Nascimento { get; set; }
         [Column("co_dim_unidade_saude_vinc")]
         public int? EstabelecimentoId { get; set; }
         [Column("co_dim_equipe_vinc")]

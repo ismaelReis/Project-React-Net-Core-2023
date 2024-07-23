@@ -1,6 +1,10 @@
 import jsonServerProvider from 'ra-data-json-server';
-import { Admin, ListGuesser, Resource, ShowGuesser } from 'react-admin';
+import { Admin, CustomRoutes, ListGuesser, Resource, ShowGuesser } from 'react-admin';
 import { IDomicilio } from './interfaces/IDomicilio';
+import { Route } from "react-router-dom";
+import Mapa from './mapa/Mapa';
+import { MyLayout } from './components/MyLayout';
+import { VisitaDomiciliarList } from './visitadomiciliar/VisitaDomiciliarList';
 
 const dataProvider = jsonServerProvider('api');
 
@@ -8,6 +12,7 @@ function App() {
     return (
         <Admin
             dataProvider={dataProvider}
+            layout={MyLayout}
         >
             <Resource
                 name="cidadaos"
@@ -18,7 +23,7 @@ function App() {
             />
             <Resource
                 name="visitasDomiciliar"
-                list={ListGuesser}
+                list={VisitaDomiciliarList}
                 show={ShowGuesser}
                 options={{ label: "Visitas domiciliares" }}
             />

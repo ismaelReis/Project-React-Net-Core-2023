@@ -9,6 +9,8 @@ namespace SidimEsus.Models
         [Key]
         [Column("co_seq_cds_domicilio")]
         public int Id { get; set; }
+        [Column("co_unico_domicilio")]
+        public string Codigo { get; set; }
         [Column("no_bairro")]
         public string Bairro { get; set; }
         [Column("no_logradouro")]

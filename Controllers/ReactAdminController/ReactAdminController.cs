@@ -172,6 +172,10 @@ namespace SidimEsus.Controllers.ReactAdminController
                 {
                     entityQuery = entityQuery.Where($"{kvp.Key} == null");
                 }
+                else if (kvp.Value.ToString().ToUpper() == "NOT NULL")
+                {
+                    entityQuery = entityQuery.Where($"{kvp.Key} != null");
+                }
                 else
                 {
                     var query = $"{kvp.Key} == @0";
